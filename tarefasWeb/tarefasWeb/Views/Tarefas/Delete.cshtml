@@ -1,0 +1,18 @@
+@model Tarefa
+
+<h2>Excluir Tarefa</h2>
+
+<div>
+    <h4>Tem certeza que deseja excluir esta tarefa?</h4>
+    <div>
+        <h5>Título: @Model.Titulo</h5>
+        <p>Descrição: @Model.Descricao</p>
+        <p>Concluída: @(Model.Concluida ? "Sim" : "Não")</p>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Excluir</button>
+    <a asp-action="Index">Cancelar</a>
+</form>
